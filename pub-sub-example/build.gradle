@@ -1,20 +1,11 @@
-plugins {
-    id 'java'
+bootJar {
+    enabled = true
 }
 
-group = 'io.github.Hyeonqz'
-version = '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
+jar {
+    enabled = false
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
-
-test {
-    useJUnitPlatform()
+    implementation project(':shared')
 }

@@ -1,12 +1,13 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
-
-group = 'io.github.Hyeonqz'
-version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+}
+
+bootJar {
+    enabled = false
 }
 
 dependencies {

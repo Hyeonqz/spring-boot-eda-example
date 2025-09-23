@@ -1,0 +1,31 @@
+server:
+  port: 8110
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/eda?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+    hikari:
+      pool-name: hikari-MySQL
+      connection-timeout: 30000
+      maximum-pool-size: 5
+      max-lifetime: 60000 # 1분
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        generate_statistics: false
+        show_sql: true
+        format_sql: true
+        use_sql_comment: false
+        highlight_sql: false
+        batch_size: 500
+        session:
+          events:
+            log:
+              LOG_QUERIES_SLOWER_THAN_MS: 1000

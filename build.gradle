@@ -1,9 +1,11 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '3.5.6'
+    id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'io.github.Hyeonqz'
-version = '1.0-SNAPSHOT'
+version = '1.0.0'
 
 repositories {
     mavenCentral()
@@ -17,4 +19,49 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+bootJar {
+    enabled = false
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = '21'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        // springboot
+        implementation 'org.springframework.boot:spring-boot-starter' // spring6 core
+        implementation 'org.springframework.boot:spring-boot-starter-web' // web
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // jpa
+
+        // lombok
+        implementation 'org.projectlombok:lombok'
+
+        // mysql
+        implementation 'mysql:mysql-connector-java:8.0.32'
+
+        // apache-commons
+        implementation 'org.apache.commons:commons-lang3:3.14.0'
+        implementation 'org.apache.commons:commons-collections4:4.4'
+        implementation 'commons-io:commons-io:2.16.1'
+
+        // swagger
+        implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
+
+        // test
+        testImplementation 'org.springframework.boot:spring-boot-starter-test' // assertj, junit
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
 }
