@@ -1,12 +1,6 @@
 rootProject.name = 'springboot-eda-examples'
 include 'pub-sub-example'
-include 'message-queue-example'
 include 'shared'
-
-// message-queue-example include
-include 'message-queue-example:settlement-producer'
-include 'message-queue-example:settlement-consumer'
-include 'message-queue-example:settlement-monitor'
 
 // pub-sub-example include
 include 'pub-sub-example:payment-service'
