@@ -1,2 +1,12 @@
 server:
   port: 8210
+
+spring:
+  config:
+    import: classpath:application-shared.yml
+  application:
+    name: settlement-consumer-service
+
+logging:
+  level:
+    io.github.Hyeonqz: DEBUG

@@ -1,11 +1,11 @@
 server:
-  port: 8082
+  port: 8083
 
 spring:
   config:
     import: classpath:application-shared.yml
   application:
-    name: audit-service
+    name: monitor-service
 
 logging:
   level:
