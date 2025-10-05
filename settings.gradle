@@ -1,5 +1,6 @@
 rootProject.name = 'springboot-eda-examples'
 include 'pub-sub-example'
+include 'message-queue-example'
 include 'shared'
 
 // pub-sub-example include
