@@ -6,6 +6,13 @@ jar {
     enabled = false
 }
 
+subprojects {
+    dependencies {
+        implementation 'org.springframework.kafka:spring-kafka'
+        testImplementation 'org.springframework.kafka:spring-kafka-test'
+    }
+}
+
 dependencies {
     implementation project(':shared')
 }
