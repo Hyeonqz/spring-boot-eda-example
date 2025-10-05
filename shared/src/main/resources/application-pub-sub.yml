@@ -1,0 +1,16 @@
+spring:
+  kafka:
+    bootstrap-servers: "localhost:9092,localhost:9093,localhost:9094"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        metadata.max.age.ms: 30000
+        reconnect.backoff.ms: 1000
+        reconnect.backoff.max.ms: 10000
+        request.timeout.ms: 30000
